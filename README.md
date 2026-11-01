@@ -10,12 +10,14 @@ Initialize the app-local dependencies:
 git submodule update --init --recursive
 ```
 
-Configure with CMake and Ninja:
+Configure and build one application (recommended while working on individual utilities):
 
 ```sh
-cmake -S . -B build -G Ninja
+cmake -S . -B build -G Ninja -DUTILS_APP=BlankWindow
 cmake --build build
 ```
+
+Set `UTILS_APP` to the directory name under `apps/`. Use `UTILS_APP=ALL` to configure every application; this requires every external dependency used by all 55 utilities to be available.
 
 Each application has its own `apps/<name>/CMakeLists.txt`. Executables are written directly to the repository's `build/` directory; intermediate files remain in CMake's build tree.
 
