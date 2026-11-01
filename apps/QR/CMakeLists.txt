@@ -1,0 +1,5 @@
+utils_add_app(QR QR.cpp)
+find_package(PNG REQUIRED)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(QRENCODE REQUIRED IMPORTED_TARGET libqrencode)
+target_link_libraries(QR PRIVATE PNG::PNG PkgConfig::QRENCODE)

@@ -1,0 +1,5 @@
+utils_add_app(OCR OCR.cpp)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(TESSERACT REQUIRED IMPORTED_TARGET tesseract)
+pkg_check_modules(LEPTONICA REQUIRED IMPORTED_TARGET lept)
+target_link_libraries(OCR PRIVATE PkgConfig::TESSERACT PkgConfig::LEPTONICA)

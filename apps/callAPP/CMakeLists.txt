@@ -1,0 +1,5 @@
+utils_add_app(callAPP callAPP.cpp)
+utils_use_qt(callAPP)
+if(WIN32)
+	target_link_libraries(callAPP PRIVATE ole32 uuid shlwapi)
+endif()

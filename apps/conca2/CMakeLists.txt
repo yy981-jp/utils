@@ -1,0 +1,8 @@
+utils_add_app(cc conca2.cpp)
+find_package(OpenCV REQUIRED COMPONENTS core imgproc imgcodecs highgui videoio)
+target_include_directories(cc PRIVATE ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(cc PRIVATE ${OpenCV_LIBS})
+if(WIN32)
+	target_link_libraries(cc PRIVATE kernel32 user32 winmm)
+endif()
+set_target_properties(cc PROPERTIES OUTPUT_NAME "cc")

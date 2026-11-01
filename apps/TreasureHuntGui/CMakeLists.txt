@@ -1,0 +1,2 @@
+utils_add_app(TreasureHuntGui TreasureHuntGui.cpp)
+utils_use_qt(TreasureHuntGui)

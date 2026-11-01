@@ -1,3 +1,87 @@
-[submodule "y9inc"]
-	path = y9inc
+[submodule "apps/ColorConvert/external/yy981"]
+	path = apps/ColorConvert/external/yy981
 	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/OCR/external/yy981"]
+	path = apps/OCR/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/SimpleFTP/external/yy981"]
+	path = apps/SimpleFTP/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/callAPP/external/yy981"]
+	path = apps/callAPP/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/compiler/external/yy981"]
+	path = apps/compiler/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/danger_thg2/external/yy981"]
+	path = apps/danger_thg2/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/dc/external/yy981"]
+	path = apps/dc/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/dfc/external/yy981"]
+	path = apps/dfc/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/exenc/external/yy981"]
+	path = apps/exenc/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/findSpace/external/yy981"]
+	path = apps/findSpace/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/getLine/external/yy981"]
+	path = apps/getLine/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/headerTest/external/yy981"]
+	path = apps/headerTest/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/lap/external/yy981"]
+	path = apps/lap/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/proct/external/yy981"]
+	path = apps/proct/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/setCPos/external/yy981"]
+	path = apps/setCPos/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/siFTP/external/yy981"]
+	path = apps/siFTP/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/sqt/external/yy981"]
+	path = apps/sqt/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/ssdl/external/yy981"]
+	path = apps/ssdl/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/tc/external/yy981"]
+	path = apps/tc/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/thg2/external/yy981"]
+	path = apps/thg2/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/undou/external/yy981"]
+	path = apps/undou/external/yy981
+	url = https://github.com/yy981-jp/tools.git
+
+[submodule "apps/iconConvert/external/stb"]
+	path = apps/iconConvert/external/stb
+	url = https://github.com/nothings/stb.git
