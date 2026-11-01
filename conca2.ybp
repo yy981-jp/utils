@@ -1,0 +1,4 @@
+cc
+-lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_imgcodecs -lopencv_videoio -lkernel32 -luser32 -lwinmm
+null
+null
