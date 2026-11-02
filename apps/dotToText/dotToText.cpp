@@ -27,7 +27,7 @@ int getColorIndex(const cv::Vec3b& color, std::map<cv::Vec3b, int, Vec3bComparat
 
 int main() {
     // 画像を読み込む
-    cv::Mat image = cv::imread("C:\cpp\HTML\_.png");
+    cv::Mat image = cv::imread("C:\\cpp\\HTML\\_.png");
 
     if (image.empty()) {
         std::cerr << "画像の読み込みに失敗しました" << std::endl;
