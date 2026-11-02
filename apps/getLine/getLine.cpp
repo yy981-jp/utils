@@ -90,7 +90,7 @@ int main(int argc, char* argv[]) {
 		// check ext
 		if (it->is_regular_file()) {
 			auto p_ext = it->path().extension().string();
-			if (is_or(p_ext,ext)) {
+			if (std::find(ext.begin(), ext.end(), p_ext) != ext.end()) {
 				std::size_t lines = count_lines_in_file(it->path());
 				std::cout << lines << "\t" << fs::relative(it->path(),cd).string() << "\n";
 				total_lines += lines;
