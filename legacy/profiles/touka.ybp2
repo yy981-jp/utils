@@ -1,0 +1,5 @@
+touka
+touka
+-lopencv_core -lopencv_imgcodecs -lopencv_imgproc
+null
+null

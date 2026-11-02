@@ -1,0 +1,4 @@
+dotToText
+-lopencv_core -lopencv_imgcodecs
+null
+null
