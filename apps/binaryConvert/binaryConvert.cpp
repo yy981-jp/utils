@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
 	// 結果を表示
 	std::cout << "11ビットずつの値:" << std::endl;
 	for (size_t i = 0; i < values.size(); ++i) {
-		std::cout< "Value " << i + 1 << ": " << values[i] << std::endl;
+		std::cout << "Value " << i + 1 << ": " << values[i] << std::endl;
 	}
 
 	return 0;

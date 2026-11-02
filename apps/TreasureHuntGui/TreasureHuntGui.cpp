@@ -4,6 +4,8 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QWidget>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QSpinBox>
+#include <QtWidgets/QLCDNumber>
 #include <random>
 #include "ui_subwindow.h"
 
@@ -25,7 +27,7 @@ int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     QWidget window;
     QWidget subwindow_w;
-    Ui::TreasureHunt_SubWindow subwindow;
+    Ui::thg2 subwindow;
     subwindow.setupUi(&subwindow_w);
 
     QGridLayout *layout = new QGridLayout(&window);
@@ -33,7 +35,7 @@ int main(int argc, char *argv[]) {
     int size = 20;
     int answer = random((size * size) - 1);
 
-    QObject::connect(subwindow.GO, &QPushButton::clicked, [&]{ gamestart(window, subwindow_w, layout, size, answer, gamecount); });
+    QObject::connect(subwindow.start, &QPushButton::clicked, [&]{ gamestart(window, subwindow_w, layout, size, answer, gamecount); });
     QObject::connect(subwindow.giveup, &QPushButton::clicked, [&]{ gamegiveup(window, subwindow_w, gamecount); });
 
     window.show();
@@ -43,7 +45,7 @@ int main(int argc, char *argv[]) {
 
 void gamestart(QWidget& window, QWidget& subwindow, QGridLayout* layout, int& size, int& answer, int& gamecount) {
 	gamecount=0;
-    subwindow.findChild<QPushButton*>("GO")->setEnabled(false);
+    subwindow.findChild<QPushButton*>("start")->setEnabled(false);
     subwindow.findChild<QPushButton*>("giveup")->setEnabled(true);
     subwindow.findChild<QLabel*>("label_clear")->setText("");
     QList<QPushButton *> allButtons = window.findChildren<QPushButton *>();
@@ -51,9 +53,8 @@ void gamestart(QWidget& window, QWidget& subwindow, QGridLayout* layout, int& si
         delete button;
     }
 
-    size = subwindow.findChild<QSpinBox*>("spinbox")->value();
+    size = subwindow.findChild<QSpinBox*>("set_dif")->value();
     answer = random(size*size);
-	subwindow.findChild<QLCDNumber*>("difficulty")->display(size);
 
     const int buttonsPerRow = size;
     const int rowCount = size;
@@ -68,7 +69,7 @@ void gamestart(QWidget& window, QWidget& subwindow, QGridLayout* layout, int& si
             QObject::connect(button, &QPushButton::clicked, [ButtonID, answer, button, &window, &subwindow, &gamecount] {
                 if (ButtonID != answer) {
                     button->setStyleSheet("background-color: red;");
-					gamecount++;subwindow.findChild<QLCDNumber*>("count")->display(gamecount);					
+					gamecount++;subwindow.findChild<QLCDNumber*>("inf_count")->display(gamecount);
 			   } else {
                     button->setStyleSheet("background-color: green;");
 					gameclear(subwindow);
@@ -79,7 +80,7 @@ void gamestart(QWidget& window, QWidget& subwindow, QGridLayout* layout, int& si
 }
 
 void gameclear(QWidget& subwindow) {
-    subwindow.findChild<QPushButton*>("GO")->setEnabled(true);
+    subwindow.findChild<QPushButton*>("start")->setEnabled(true);
     subwindow.findChild<QPushButton*>("giveup")->setEnabled(false);
     subwindow.findChild<QLabel*>("label_clear")->setText("GameClear!!! GOを押して進む");
 }
@@ -90,7 +91,7 @@ void gamegiveup(QWidget& window, QWidget& subwindow, int& gamecount) {
         gamecount--;
 		button->click();
     }
-    subwindow.findChild<QPushButton*>("GO")->setEnabled(true);
+    subwindow.findChild<QPushButton*>("start")->setEnabled(true);
     subwindow.findChild<QPushButton*>("giveup")->setEnabled(false);
     subwindow.findChild<QLabel*>("label_clear")->setText("giveup GOを押して進む");
 }
