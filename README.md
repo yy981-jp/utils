@@ -17,7 +17,7 @@ cmake -S . -B build -G Ninja -DUTILS_APP=BlankWindow
 cmake --build build
 ```
 
-Set `UTILS_APP` to the directory name under `apps/`. Use `UTILS_APP=ALL` to configure every application; this requires every external dependency used by all 55 utilities to be available.
+Set `UTILS_APP` to the directory name under `apps/`. Use `UTILS_APP=ALL` to configure every application; this requires every external dependency used by all 55 utilities to be available. On MSYS2 UCRT64, use the UCRT64 CMake, compiler, pkg-config, and Ninja executables together rather than mixing `/usr/bin` tools with `/ucrt64/bin` tools.
 
 Each application has its own `apps/<name>/CMakeLists.txt`. Executables are written directly to the repository's `build/` directory; intermediate files remain in CMake's build tree.
 

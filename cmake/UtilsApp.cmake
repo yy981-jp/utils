@@ -27,3 +27,27 @@ function(utils_use_qt target)
 		target_link_libraries(${target} PRIVATE Qt6::${_component})
 	endforeach()
 endfunction()
+
+function(utils_enable_automoc target)
+	set_property(TARGET ${target} PROPERTY AUTOMOC ON)
+endfunction()
+
+function(utils_find_pkg_config)
+	if(MINGW)
+		get_filename_component(_utils_compiler_bin "${CMAKE_CXX_COMPILER}" DIRECTORY)
+		find_program(_utils_pkg_config
+			NAMES pkg-config.exe pkgconf.exe
+			HINTS "${_utils_compiler_bin}"
+			NO_DEFAULT_PATH
+		)
+		if(NOT _utils_pkg_config)
+			message(FATAL_ERROR
+				"Could not find pkg-config.exe next to the active MinGW compiler: ${CMAKE_CXX_COMPILER}"
+			)
+		endif()
+		set(PKG_CONFIG_EXECUTABLE "${_utils_pkg_config}" CACHE FILEPATH
+			"pkg-config executable matching the active MinGW toolchain" FORCE
+		)
+	endif()
+	find_package(PkgConfig REQUIRED)
+endfunction()
